@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2003
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SDP Parser", "SDP Parser.vcxproj", "{619A4914-978B-4C62-8362-A0D57D5F7A06}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mytest", "mytest\mytest.vcxproj", "{08BDB3AE-D214-40EC-8346-8763BD995C3C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,8 +23,19 @@ Global
 		{619A4914-978B-4C62-8362-A0D57D5F7A06}.Release|x64.Build.0 = Release|x64
 		{619A4914-978B-4C62-8362-A0D57D5F7A06}.Release|x86.ActiveCfg = Release|Win32
 		{619A4914-978B-4C62-8362-A0D57D5F7A06}.Release|x86.Build.0 = Release|Win32
+		{08BDB3AE-D214-40EC-8346-8763BD995C3C}.Debug|x64.ActiveCfg = Debug|x64
+		{08BDB3AE-D214-40EC-8346-8763BD995C3C}.Debug|x64.Build.0 = Debug|x64
+		{08BDB3AE-D214-40EC-8346-8763BD995C3C}.Debug|x86.ActiveCfg = Debug|Win32
+		{08BDB3AE-D214-40EC-8346-8763BD995C3C}.Debug|x86.Build.0 = Debug|Win32
+		{08BDB3AE-D214-40EC-8346-8763BD995C3C}.Release|x64.ActiveCfg = Release|x64
+		{08BDB3AE-D214-40EC-8346-8763BD995C3C}.Release|x64.Build.0 = Release|x64
+		{08BDB3AE-D214-40EC-8346-8763BD995C3C}.Release|x86.ActiveCfg = Release|Win32
+		{08BDB3AE-D214-40EC-8346-8763BD995C3C}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {49194087-6FFA-4595-BFF3-014F1A3B9D3C}
 	EndGlobalSection
 EndGlobal

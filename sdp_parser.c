@@ -550,6 +550,15 @@ static enum sdp_parse_err sdp_parse_attr(sdp_stream_t sdp, char **line,
 			sdp_getline(line, len, sdp);
 			continue;
 		}
+        else
+        {
+            if (media&&parse_attr_specific)
+                parse_attr_specific(media, *a, attr, value, params);
+            a = &(*a)->next;
+
+            sdp_getline(line, len, sdp);
+            continue;
+        }
 
 		/* attribute is not supported */
 		free(*a);
@@ -877,7 +886,10 @@ static void sdp_attr_free(struct sdp_attr *attr)
 			free(tmp->value.mid.identification_tag);
 			break;
 		case SDP_ATTR_SPECIFIC:
-			free(tmp->value.specific);
+            if (tmp->value.specific.param_dtor) {
+                tmp->value.specific.param_dtor(
+                    tmp->value.specific.params);
+            }
 			break;
 		case SDP_ATTR_RTPMAP:
 		case SDP_ATTR_NOT_SUPPORTED:

@@ -124,6 +124,11 @@ struct sdp_attr_value_fmtp {
 	void (*param_dtor)(void *params);
 };
 
+struct sdp_attr_value_specific {
+    void *params;
+    void(*param_dtor)(void *params);
+};
+
 enum sdp_attr_source_filter_mode {
 	SDP_ATTR_SRC_FLT_INCL,
 	SDP_ATTR_SRC_FLT_EXCL,
@@ -166,7 +171,7 @@ union sdp_attr_value {
 	struct sdp_attr_value_mid mid;
 
 	/* Specific */
-	void *specific;
+    struct sdp_attr_value_specific specific;
 };
 
 struct sdp_attr {
