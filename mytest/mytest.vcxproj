@@ -131,6 +131,9 @@
     <ClCompile Include="..\sdp_stream.c" />
     <ClCompile Include="..\third_party\base64\base64.c" />
     <ClCompile Include="..\util.c" />
+    <ClCompile Include="h264_aac_specific.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

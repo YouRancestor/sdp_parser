@@ -53,5 +53,8 @@
     <ClCompile Include="..\third_party\base64\base64.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="h264_aac_specific.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

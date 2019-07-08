@@ -5,17 +5,17 @@
 #define MEDIA_SUBTYPE_H264  "H264"
 #define MEDIA_SUBTYPE_AAC   "MPEG4-GENERIC"
 
-struct CodecParH264
+typedef struct CodecParH264
 {
     unsigned int sps_pps_len;
     unsigned char sps_pps[200];
-};
+}CodecParH264;
 
-struct CodecParAAC
+typedef struct CodecParAAC
 {
     unsigned int config_len;
     unsigned char config[40];
-};
+}CodecParAAC;
 
 enum sdp_parse_err sdp_parse_sub_h264(struct sdp_attr *a, char *attr, char *value, char *params)
 {
@@ -29,7 +29,8 @@ enum sdp_parse_err sdp_parse_sub_h264(struct sdp_attr *a, char *attr, char *valu
         char *token = strtok(params, ";");
         while (token)
         {
-            if (char* sps = strstr(token, "sprop-parameter-sets="))
+            char* sps = strstr(token, "sprop-parameter-sets=");
+            if (sps)
             {
                 sps += strlen("sprop-parameter-sets=");
                 char* comma = strstr(sps, ",");
@@ -135,6 +136,7 @@ enum sdp_parse_err sdp_parse_specific(struct sdp_media *media,
     if (!strcmp(attr, "control"))
     {
         a->type = SDP_ATTR_SPECIFIC;
+        strcpy_s(a->value.specific.name, sizeof(a->value.specific.name), attr);
         a->value.specific.params = strdup(value);
         a->value.specific.param_dtor = free;
         return SDP_PARSE_OK;

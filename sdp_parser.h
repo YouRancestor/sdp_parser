@@ -125,6 +125,7 @@ struct sdp_attr_value_fmtp {
 };
 
 struct sdp_attr_value_specific {
+    char name[100];
     void *params;
     void(*param_dtor)(void *params);
 };
